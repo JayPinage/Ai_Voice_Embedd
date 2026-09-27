@@ -1,0 +1,1012 @@
+/* =========================================
+   JACK AI ASSISTANT POPUP
+========================================= */
+
+.jack-popup {
+    position: fixed;
+
+    right: 16px;
+    bottom: 85px;
+
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+
+    border-radius: 28px;
+    overflow: hidden;
+
+    z-index: 999999;
+    display: none;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.30);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #ffffff;
+}
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+.jack-popup.theme-dark {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(91, 77, 255, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            160deg,
+            #090b14 0%,
+            #0d101c 45%,
+            #080a12 100%
+        );
+}
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+.jack-popup.theme-light {
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(99, 85, 255, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            160deg,
+            #ffffff 0%,
+            #f6f7fb 50%,
+            #eef0f7 100%
+        );
+
+    color: #171925;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.18);
+}
+
+.jack-popup.theme-light .jack-title {
+    background: linear-gradient(
+        90deg,
+        #171925,
+        #6558e8
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.jack-popup.theme-light .jack-sub {
+    color: rgba(20, 22, 35, 0.60);
+}
+
+.jack-popup.theme-light .jack-status {
+    color: rgba(20, 22, 35, 0.65);
+
+    background: rgba(0, 0, 0, 0.04);
+
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.jack-popup.theme-light .jack-user-text {
+    color: #333644;
+
+    background: rgba(0, 0, 0, 0.035);
+
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+.jack-popup.theme-light .jack-ai-text {
+    color: #20222f;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(101, 86, 255, 0.08),
+            rgba(0, 0, 0, 0.025)
+        );
+
+    border-color: rgba(101, 86, 255, 0.14);
+}
+
+
+/* =========================================
+   GLASS THEME
+========================================= */
+
+.jack-popup.theme-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+.jack-popup.theme-glass .jack-overlay {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(143, 130, 255, 0.25),
+            transparent 40%
+        );
+}
+
+.jack-popup.theme-glass .jack-status {
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+.jack-popup.theme-glass .jack-user-text,
+.jack-popup.theme-glass .jack-ai-text {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   NEON THEME
+========================================= */
+
+.jack-popup.theme-neon {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(0, 255, 255, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 0, 170, 0.12),
+            transparent 35%
+        ),
+        #050509;
+
+    border: 1px solid rgba(0, 255, 255, 0.30);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.18),
+        0 20px 60px rgba(0, 0, 0, 0.50);
+}
+
+.jack-popup.theme-neon .jack-orb {
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #ffffff 0%,
+            #7fffff 8%,
+            #00eaff 30%,
+            #0066ff 55%,
+            #16003d 100%
+        );
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 55px rgba(0, 140, 255, 0.65),
+        inset -8px -10px 20px rgba(0, 0, 0, 0.40);
+}
+
+.jack-popup.theme-neon .jack-orb-glow {
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 255, 255, 0.55) 0%,
+            rgba(0, 120, 255, 0.20) 40%,
+            transparent 72%
+        );
+}
+
+.jack-popup.theme-neon .jack-title {
+    background: linear-gradient(
+        90deg,
+        #00ffff,
+        #ffffff,
+        #ff4bd8
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.jack-popup.theme-neon .jack-wave span {
+    background: linear-gradient(
+        to top,
+        #00ffff,
+        #ff3bd4
+    );
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.jack-popup.theme-neon .jack-status {
+    background: rgba(0, 255, 255, 0.05);
+
+    border-color: rgba(0, 255, 255, 0.20);
+
+    color: rgba(0, 255, 255, 0.75);
+}
+
+.jack-popup.theme-neon .jack-user-text {
+    background: rgba(0, 255, 255, 0.04);
+
+    border-color: rgba(0, 255, 255, 0.12);
+}
+
+.jack-popup.theme-neon .jack-ai-text {
+    background: rgba(255, 0, 200, 0.04);
+
+    border-color: rgba(255, 0, 200, 0.15);
+}
+
+.jack-popup.theme-neon .jack-mic {
+    background:
+        linear-gradient(
+            145deg,
+            #00eaff,
+            #6840ff,
+            #ff2ec4
+        );
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.35),
+        0 0 45px rgba(255, 0, 200, 0.20);
+}
+
+/* =================================
+   FLOATING ASSISTANT BUTTON
+================================= */
+
+.jack-launcher {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 1000000;
+
+    font-size: 24px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #00eaff,
+            #6840ff,
+            #ff2ec4
+        );
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, .35),
+        0 10px 30px rgba(0, 0, 0, .35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* Hover */
+
+.jack-launcher:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 255, .55),
+        0 12px 35px rgba(0, 0, 0, .4);
+}
+
+
+/* When opened */
+
+.jack-launcher.active {
+    transform: rotate(90deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff3bd4,
+            #6840ff
+        );
+}
+
+
+/* =================================
+   NEON LAUNCHER
+================================= */
+
+.jack-launcher.theme-neon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #00eaff,
+            #6840ff,
+            #ff2ec4
+        );
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, .45),
+        0 0 45px rgba(255, 0, 200, .2);
+}
+
+
+/* =================================
+   LIGHT LAUNCHER
+================================= */
+
+.jack-launcher.theme-light {
+
+    color: #171925;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eef0ff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .2);
+}
+
+
+/* =================================
+   DARK LAUNCHER
+================================= */
+
+.jack-launcher.theme-dark {
+
+    background:
+        linear-gradient(
+            145deg,
+            #171a2b,
+            #090b14
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .4);
+}
+
+
+/* =================================
+   GLASS LAUNCHER
+================================= */
+
+.jack-launcher.theme-glass {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.25),
+            rgba(255,255,255,.08)
+        );
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.3),
+        inset 0 1px 0 rgba(255,255,255,.2);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.jack-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(100, 80, 255, 0.12),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.jack-content {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    padding: 28px 20px 20px;
+}
+
+
+/* =========================================
+   TOP / ORB AREA
+========================================= */
+
+.jack-top {
+    position: relative;
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+}
+
+
+/* Outer glow */
+
+.jack-orb-glow {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(112, 91, 255, 0.45) 0%,
+            rgba(74, 58, 220, 0.18) 40%,
+            transparent 72%
+        );
+
+    filter: blur(15px);
+
+    animation: jackGlow 3s ease-in-out infinite;
+}
+
+
+/* Main orb */
+
+.jack-orb {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #ffffff 0%,
+            #bdb5ff 7%,
+            #7365ff 28%,
+            #4435d4 55%,
+            #17132f 100%
+        );
+
+    box-shadow:
+        0 0 20px rgba(113, 96, 255, 0.7),
+        0 0 50px rgba(91, 72, 255, 0.4),
+        inset -10px -12px 25px rgba(0, 0, 0, 0.35),
+        inset 8px 8px 20px rgba(255, 255, 255, 0.22);
+
+    animation: jackOrbFloat 3s ease-in-out infinite;
+}
+
+
+/* Small shine */
+
+.jack-orb::before {
+    content: "";
+
+    position: absolute;
+
+    top: 17px;
+    left: 20px;
+
+    width: 18px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    filter: blur(3px);
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.jack-title {
+    margin: 3px 0 6px;
+
+    font-size: 20px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #cfcaff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.jack-sub {
+    margin: 1.5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.jack-status {
+    margin-top: 14px;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   VOICE WAVE
+========================================= */
+
+.jack-wave {
+    height: 32px;
+
+    margin-top: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+/* Wave bars */
+
+.jack-wave span {
+    width: 4px;
+    height: 8px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to top,
+        #6255ff,
+        #aaa2ff
+    );
+
+    box-shadow:
+        0 0 8px rgba(102, 86, 255, 0.55);
+
+    animation: jackWave 1s ease-in-out infinite;
+}
+
+
+/* Different animation timing */
+
+.jack-wave span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.jack-wave span:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.jack-wave span:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.jack-wave span:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.jack-wave span:nth-child(5) {
+    animation-delay: 0.24s;
+}
+
+.jack-wave span:nth-child(6) {
+    animation-delay: 0.12s;
+}
+
+.jack-wave span:nth-child(7) {
+    animation-delay: 0s;
+}
+
+
+/* =========================================
+   USER TEXT
+========================================= */
+
+.jack-user-text {
+    width: 100%;
+
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    padding: 8px 11px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   AI TEXT
+========================================= */
+
+.jack-ai-text {
+    width: 100%;
+
+    min-height: 40px;
+
+    margin-top: 6px;
+
+    padding: 8px 11px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(101, 86, 255, 0.10),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(105, 91, 255, 0.13);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+    word-break: break-word;
+
+    overflow-y: auto;
+
+    max-height: 80px;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.jack-bottom {
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   MICROPHONE BUTTON
+========================================= */
+
+.jack-mic {
+    position: relative;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #766aff,
+            #4032d0
+        );
+
+    box-shadow:
+        0 8px 30px rgba(78, 61, 220, 0.45),
+        0 0 0 8px rgba(91, 75, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Microphone icon */
+
+.jack-mic::before {
+    content: "🎙";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 23px;
+
+    filter: grayscale(1) brightness(0) invert(1);
+}
+
+
+/* Hover */
+
+.jack-mic:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 10px 35px rgba(78, 61, 220, 0.55),
+        0 0 0 10px rgba(91, 75, 255, 0.10);
+}
+
+
+/* Active */
+
+.jack-mic:active {
+    transform: scale(0.94);
+}
+
+
+/* Listening state */
+
+.jack-popup.listening .jack-mic {
+    animation: jackMicPulse 1.2s ease-in-out infinite;
+
+    box-shadow:
+        0 0 0 10px rgba(102, 86, 255, 0.10),
+        0 0 0 20px rgba(102, 86, 255, 0.05),
+        0 10px 40px rgba(79, 62, 220, 0.6);
+}
+
+
+/* Listening wave */
+
+.jack-popup.listening .jack-wave span {
+    animation-duration: 0.55s;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.jack-ai-text::-webkit-scrollbar {
+    width: 4px;
+}
+
+.jack-ai-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.jack-ai-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes jackGlow {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+@keyframes jackOrbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+@keyframes jackWave {
+
+    0%,
+    100% {
+        height: 8px;
+    }
+
+    50% {
+        height: 30px;
+    }
+}
+
+
+@keyframes jackMicPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .jack-popup {
+        right: 10px;
+        left: 10px;
+
+        bottom: 85px;
+
+        width: auto;
+        min-width: 0;
+        max-width: none;
+
+        height: calc(100vh - 105px);
+        min-height: 500px;
+        max-height: none;
+
+        border-radius: 30px;
+    }
+
+    .jack-content {
+        padding-top: 30px;
+    }
+
+    .jack-top {
+        transform: scale(0.9);
+        margin-bottom: 5px;
+    }
+
+    .jack-title {
+        font-size: 21px;
+    }
+
+    .jack-sub {
+        font-size: 13px;
+    }
+}
