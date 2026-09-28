@@ -23,7 +23,7 @@
 
     const API_BASE_URL = "https://ai-voice-embeddserver.onrender.com";
 
-    const CSS_URL = "http://localhost:5173/assistant.css";
+    const CSS_URL = "https://embeddai.onrender.com/assistant.css";
 
     const DEFAULT_THEME = "neon";
 
