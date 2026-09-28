@@ -11,7 +11,7 @@ import Biling from "./pages/Billing";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
-export const ServerUrl = "http://localhost:8000"
+export const ServerUrl = "https://ai-voice-embeddserver.onrender.com"
 export const CLIENT_URL = "http://localhost:5173"
 
 function App() {
