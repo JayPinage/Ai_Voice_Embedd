@@ -135,7 +135,7 @@ function Builder({ user, setUser }) {
 
                 {/* Gemini Status Card */}
                 <div className="bg-gray-50/70 border border-gray-100 rounded-2xl p-4 shadow-sm">
-                  <p className="text-xs font-medium text-gray-400">Gemini Status</p>
+                  <p className="text-xs font-medium text-gray-400">AI Status</p>
                   <h3 className="text-lg font-bold text-emerald-600 mt-1 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
                     Active

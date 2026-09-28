@@ -38,7 +38,7 @@ function Navbar({ user, setUser, ServerUrl }) { // Fix 2: Added ServerUrl prop
           </button>
 
           {/* Billing Button */}
-          <button onClick={()=>navigate("/biling")}  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all">
+          <button onClick={()=>navigate("/billing")}  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all">
             Billing
           </button>
 
