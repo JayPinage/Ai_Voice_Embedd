@@ -21,7 +21,7 @@
 
     const userId = script?.dataset?.userId;
 
-    const API_BASE_URL = "http://localhost:8000";
+    const API_BASE_URL = "https://ai-voice-embeddserver.onrender.com";
 
     const CSS_URL = "http://localhost:5173/assistant.css";
 
