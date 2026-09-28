@@ -12,7 +12,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 
 export const ServerUrl = "https://ai-voice-embeddserver.onrender.com"
-export const CLIENT_URL = "http://localhost:5173"
+export const CLIENT_URL = "https://embeddai.onrender.com"
 
 function App() {
   const [user, setUser] = useState(null)
